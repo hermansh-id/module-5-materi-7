@@ -1,0 +1,7 @@
+services:
+  face-detection:
+    build: .
+    restart: unless-stopped
+    devices:
+      - /dev/video0:/dev/video0
+    command: ["--method", "yunet", "--headless", "--camera", "0"]
